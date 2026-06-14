@@ -1,0 +1,28 @@
+package main
+
+import (
+	"film-arsiv/controllers"
+	"film-arsiv/models"
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	models.ConnectDatabase()
+
+	r := gin.Default()
+
+	// HTML şablonlarının nerede olduğunu Gin'e söylüyoruz
+	r.LoadHTMLGlob("views/*")
+
+	// Arayüz Rotası (Tarayıcıdan direkt açılacak yer)
+	r.GET("/", controllers.RenderIndex)
+
+	// API Rotaları
+	r.GET("/movies", controllers.GetFilms)
+	r.GET("/movies/:id", controllers.GetFilm)
+	r.POST("/movies", controllers.CreateFilm)
+	r.PUT("/movies/:id", controllers.UpdateFilm)
+	r.DELETE("/movies/:id", controllers.DeleteFilm)
+
+	r.Run(":8082")
+}

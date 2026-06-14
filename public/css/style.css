@@ -1,0 +1,23 @@
+body { 
+    background-color: #f4f6f9; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+.card { 
+    transition: all 0.3s ease; 
+    border: none; 
+    overflow: hidden; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important; 
+}
+.stats-card { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: white; 
+}
+.movie-poster { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    background-color: #e9ecef; 
+}

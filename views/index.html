@@ -1,0 +1,55 @@
+{{ define "index.html" }}
+{{ template "header" . }}
+
+<div class="row mb-4" id="statsPanel"></div>
+
+<div class="card p-3 mb-4 shadow-sm bg-white">
+    <form action="/" method="GET" class="input-group">
+        <span class="input-group-text bg-transparent border-end-0">🔍</span>
+        <input type="text" name="q" id="searchInput" class="form-control border-start-0" 
+               placeholder="Veritabanındaki filmler arasında (Ad, Tür, Yönetmen) ara..." 
+               value="{{.query}}">
+        <button type="submit" class="btn btn-primary fw-bold px-4">Ara</button>
+        {{if .query}}
+            <a href="/" class="btn btn-outline-secondary d-flex align-items-center px-3 text-decoration-none">Temizle</a>
+        {{end}}
+    </form>
+</div>
+
+<div class="row" id="moviesContainer">
+    {{range .films}}
+    <div class="col-md-4 mb-4 movie-item" 
+         data-title="{{.Title}}" 
+         data-genre="{{.Genre}}" 
+         data-director="{{.Director}}"
+         data-rating="{{.Rating}}">
+        <div class="card h-100 shadow-sm bg-white">
+            <img src="{{.Poster}}" class="movie-poster" alt="{{.Title}} Afişi" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500'">
+            
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h5 class="card-title fw-bold text-dark mb-1">{{.Title}}</h5>
+                        <span class="badge bg-warning text-dark fw-bold">⭐ {{.Rating}}</span>
+                    </div>
+                    <h6 class="text-primary mb-3 text-uppercase fs-7 fw-semibold" style="font-size: 0.8rem;">{{.Genre}}</h6>
+                    <p class="card-text text-muted mb-1"><strong>Yönetmen:</strong> {{.Director}}</p>
+                    <p class="card-text text-muted"><strong>Yıl:</strong> {{.Year}}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-2">
+                    <a href="/update-page?id={{.ID}}" class="btn btn-outline-primary btn-sm px-3">✏️ Düzenle</a>
+                    <button class="btn btn-outline-danger btn-sm px-3" onclick="deleteFilm({{.ID}})">🗑️ Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="col-12 text-center py-5">
+        <p class="text-muted fs-5">Aradığınız kriterlere uygun bir film bulunamadı veya henüz hiç film eklemediniz.</p>
+    </div>
+    {{end}}
+</div>
+
+<script src="/static/js/index.js"></script>
+{{ template "footer" . }}
+{{ end }}
