@@ -105,5 +105,3 @@ CSS Framework: Bootstrap v5.3 (Responsive grid ve UI bileşen kütüphanesi)
 İstemci Mantığı: Vanilla JavaScript (ES6+ standartlarında asenkron event yönetimi)
 
 Veri İletişim Protokolü: Fetch API (JSON tabanlı RESTful asenkron istek yönetimi)
-
-⭐ Bu geçiş çalışması; .NET ekosisteminin getirdiği yüksek soyutlama katmanlarının ötesine geçerek, bellek optimizasyonu, ağ soket yönetimi ve derleme mimarileri üzerinde alt seviye (low-level) sistem vizyonu ve mühendislik yetkinliği kazanmak amacıyla kurgulanmıştır.
