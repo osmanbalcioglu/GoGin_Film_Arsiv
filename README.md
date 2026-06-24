@@ -1,10 +1,10 @@
-# 🎬 Sinematik - Go Gin & SQLite Film Arşivi Projesi
+## Sinematik - Go Gin & SQLite Film Arşivi Projesi
 
 Bu proje, daha önce **.NET (C#) Web API** mimarisiyle production standartlarında geliştirilmiş olan Film Arşivi uygulamasının, **Go (Golang) ve Gin Framework** ekosistemine taşınarak asenkron ve modüler mikro mimari prensiplerine uygun şekilde yeniden yapılandırılması sürecini kapsamaktadır. Proje; bağımsız bir veri katmanı (SQLite), runtime optimizasyonu yapılmış arama indeksleri ve canlı metrik analizi sunan entegre bir yönetim paneli (Dashboard) içeren, veri bütünlüğü yüksek kurumsal standartlarda bir **CRUD** uygulamasıdır.
 
 ---
 
-## 🚀 Go Gin'in .NET Ekosistemine Kıyasla Teknik Avantajları
+## Go Gin'in .NET Ekosistemine Kıyasla Teknik Avantajları
 
 Projenin Go mimarisine taşınması sürecinde, altyapı ve kaynak yönetimi seviyesinde elde edilen majör mühendislik kazanımları şunlardır:
 
@@ -15,7 +15,7 @@ Projenin Go mimarisine taşınması sürecinde, altyapı ve kaynak yönetimi sev
 
 ---
 
-## 🧠 Geliştirme Sürecinde Karşılaşılan Zorluklar, Teknik Bariyerler ve Çözümler
+## Geliştirme Sürecinde Karşılaşılan Zorluklar, Teknik Bariyerler ve Çözümler
 
 Yüksek soyutlama düzeyine sahip kurumsal .NET mimarisinden, Go'nun minimalist ve performans odaklı yapısına geçişte karşılaşılan teknik bariyerler ve uygulanan mühendislik çözümleri:
 
@@ -39,7 +39,7 @@ Yüksek soyutlama düzeyine sahip kurumsal .NET mimarisinden, Go'nun minimalist 
 
 ---
 
-## 📂 Proje Klasör Yapısı
+## Proje Klasör Yapısı
 
 Proje, Sorumlulukların Ayrılması (**Separation of Concerns - SoC**) prensibine uygun olarak aşağıdaki kurumsal dizin mimarisinde kurgulanmıştır:
 
@@ -72,7 +72,7 @@ FilmArsivGo/
 ├── go.mod                # Go Bağımlılık ve Modül Bildirimi
 └── go.sum                # Bağımlılık Doğrulama ve Güvenlik İmzaları
 
-🚀 Projeyi Yerelde Çalıştırma Talimatı
+## Projeyi Yerelde Çalıştırma Talimatı
 Uygulamanın yerel geliştirme ortamında (localhost) ayağa kaldırılması için aşağıdaki adımların terminal üzerinden yürütülmesi gerekmektedir:
 
 1. Port Temizliği ve Mevcut Proseslerin Sonlandırılması
@@ -87,7 +87,7 @@ go run main.go
 Sunucu başarıyla başlatıldıktan sonra HTTP çoklu sayfa yönlendirmelerini test etmek için tarayıcı üzerinden aşağıdaki uç noktaya istek atın:
 
 http://localhost:8085/
-🛠️ Kullanılan Teknolojiler
+##Kullanılan Teknolojiler
 Arka Plan (Backend) & Veri Katmanı
 Dil: Go (Golang) v1.22+ (Yüksek performanslı, concurrency odaklı derleme dili)
 
